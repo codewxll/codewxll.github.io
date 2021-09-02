@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="今天有点小废柴, LeonWang&#39;s Blog">
+    <meta name="keywords" content="JavaScript知识点, LeonWang&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>今天有点小废柴 | LeonWang&#39;s Blog</title>
+    <title>JavaScript知识点 | LeonWang&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">今天有点小废柴</h1>
+                    <h1 class="description center-align post-title">JavaScript知识点</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                                <span class="chip bg-color">前端知识</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-04-06
+                    2021-05-20
                 </div>
                 
 
@@ -464,18 +472,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="以后小王会是怎样的呢"><a href="#以后小王会是怎样的呢" class="headerlink" title="以后小王会是怎样的呢"></a>以后小王会是怎样的呢</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>今日事：</p>
-<ul>
-<li>老师给了新任务，研究区块链，Run代码</li>
-<li>闲的没事，学室内设计去了（我有罪，不该不务正业呜呜┭┮﹏┭┮</li>
-<li>今天想把博客内容丰富一下的，但是和发小视频了一个半小时，没时间了，明天再做吧</li>
-</ul>
-<p>明日计划：</p>
-<ul>
-<li>上午将区块链背景知识填充完毕</li>
-<li>下午找相关源码RUN </li>
-<li>开始英语6级的准备呜呜呜我好菜，现在还没过</li>
-</ul>
+                <h2 id="JavaScript-作用域"><a href="#JavaScript-作用域" class="headerlink" title="JavaScript 作用域"></a>JavaScript 作用域</h2><p>在 JavaScript 中, 对象和函数同样也是变量。</p>
+<p><strong>在 JavaScript 中, 作用域为可访问变量，对象，函数的集合。</strong></p>
+<h3 id="JavaScript-局部作用域"><a href="#JavaScript-局部作用域" class="headerlink" title="JavaScript 局部作用域"></a>JavaScript 局部作用域</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此处不能调用 carName 变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>变量在函数内声明，变量为局部作用域。</p>
+<p>局部变量：只能在函数内部访问。</p>
+<hr>
+<p>因为局部变量只作用于函数内，所以不同的函数可以使用相同名称的变量。</p>
+<p>局部变量在函数开始执行时创建，函数执行完后局部变量会自动销毁。</p>
+<h2 id="JavaScript-全局变量"><a href="#JavaScript-全局变量" class="headerlink" title="JavaScript 全局变量"></a>JavaScript 全局变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> carName = <span class="string">&quot; Volvo&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 函数内可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>变量在函数外定义，即为全局变量。</p>
+<p>全局变量有 <strong>全局作用域</strong>: 网页中所有脚本和函数均可使用。 </p>
+<hr>
+<p>如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。</p>
+<p>以下实例中 carName 在函数内，但是为全局变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    carName = <span class="string">&quot;Volvo&quot;</span>;</span><br><span class="line">    <span class="comment">// 此处可调用 carName 变量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="JavaScript-变量生命周期"><a href="#JavaScript-变量生命周期" class="headerlink" title="JavaScript 变量生命周期"></a>JavaScript 变量生命周期</h2><p>JavaScript 变量生命周期在它<strong>声明时初始化</strong>。</p>
+<p>局部变量在<strong>函数执行完毕后销毁</strong>。</p>
+<p>全局变量在<strong>页面关闭后销毁</strong>。</p>
+<h2 id="字符串可以是对象"><a href="#字符串可以是对象" class="headerlink" title="字符串可以是对象"></a>字符串可以是对象</h2><p>通常， JavaScript 字符串是原始值，可以使用字符创建： <strong>var firstName = “John”</strong></p>
+<p>但我们也可以使用 new 关键字将字符串定义为一个对象： <strong>var firstName = new String(“John”)</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="string">&quot;John&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> y = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;John&quot;</span>);</span><br><span class="line"><span class="keyword">typeof</span> x <span class="comment">// 返回 String</span></span><br><span class="line"><span class="keyword">typeof</span> y <span class="comment">// 返回 Object</span></span><br></pre></td></tr></table></figure>
+
+<p>:smiling_imp:<strong>不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用：</strong></p>
+<h1 id="js中-和-区别"><a href="#js中-和-区别" class="headerlink" title="js中==  和 ===区别"></a>js中==  和 ===区别</h1><p>简单来说： == 代表相同， ===代表严格相同, 为啥这么说呢， </p>
+<p>这么理解： 当进行双等号比较时候： 先检查两个操作数数据类型，如果相同， 则进行== 比较， 如果不同， 则愿意为你进行一次类型转换， 转换成相同类型后再进行比较， 而===比较时， 如果类型不同，直接就是false.</p>
+<p>操作数1 == 操作数2， 操作数1 === 操作数2</p>
+<p>比较过程：</p>
+<p>　　双等号==： </p>
+<p>　　（1）如果两个值类型相同，再进行三个等号(===)的比较</p>
+<p>　　（2）如果两个值类型不同，也有可能相等，需根据以下规则进行类型转换在比较：</p>
+<p>　　　　1）如果一个是null，一个是undefined，那么相等</p>
+<p>　　　　2）如果一个是字符串，一个是数值，把字符串转换成数值之后再进行比较</p>
+<p>　　</p>
+<p>　　三等号===:</p>
+<p>　　（1）如果类型不同，就一定不相等</p>
+<p>　　（2）如果两个都是数值，并且是同一个值，那么相等；如果其中至少一个是NaN，那么不相等。（判断一个值是否是NaN，只能使用isNaN( ) 来判断）</p>
+<p>　　（3）如果两个都是字符串，每个位置的字符都一样，那么相等，否则不相等。</p>
+<p>　　（4）如果两个值都是true，或是false，那么相等</p>
+<p>　　（5）如果两个值都引用同一个对象或是函数，那么相等，否则不相等</p>
+<p>　　（6）如果两个值都是null，或是undefined，那么相等</p>
+<h3 id="JavaScript-NaN-属性"><a href="#JavaScript-NaN-属性" class="headerlink" title="JavaScript NaN 属性"></a>JavaScript NaN 属性</h3><h4 id="定义和用法"><a href="#定义和用法" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>NaN 属性是代表非数字值的特殊值。该属性用于指示某个值不是数字。可以把 Number 对象设置为该值，来指示其不是数字值。</p>
+<p><strong>提示：</strong>请使用 isNaN() 全局函数来判断一个值是否是 NaN 值。</p>
 
                 
             </div>
@@ -502,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://codewxll.github.io/2021/04/06/%E4%BB%8A%E5%A4%A9%E6%9C%89%E7%82%B9%E5%B0%8F%E5%BA%9F%E6%9F%B4/">https://codewxll.github.io/2021/04/06/%E4%BB%8A%E5%A4%A9%E6%9C%89%E7%82%B9%E5%B0%8F%E5%BA%9F%E6%9F%B4/</a>
+                    <a href="https://codewxll.github.io/2021/05/20/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/">https://codewxll.github.io/2021/05/20/JavaScript%E7%9F%A5%E8%AF%86%E7%82%B9/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,7 +586,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                                    <span class="chip bg-color">前端知识</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -735,13 +790,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/04/18/Android-%E5%85%A5%E9%97%A8/">
+                <a href="/2021/05/22/flex%E5%B8%83%E5%B1%80%E4%B9%8Bjustify-content/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Android 入门">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="flex布局之justify-content">
                         
-                        <span class="card-title">Android 入门</span>
+                        <span class="card-title">flex布局之justify-content</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -752,14 +807,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
-                                    安卓
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
                                 </a>
                             
                             
@@ -769,8 +824,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">前端知识</span>
+                    </a>
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                 </div>
@@ -784,13 +843,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/05/The-birth-of-my-blog/">
+                <a href="/2021/05/18/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="The birth of my blog">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="ES6新特性笔记">
                         
-                        <span class="card-title">The birth of my blog</span>
+                        <span class="card-title">ES6新特性笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,14 +860,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/" class="post-category">
-                                    日常牢骚
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
                                 </a>
                             
                             
@@ -818,8 +877,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%9E%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
-                        <span class="chip bg-color">非技术的碎碎念</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">前端知识</span>
+                    </a>
+                    
+                    <a href="/tags/ES6/">
+                        <span class="chip bg-color">ES6</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="今天有点小废柴, LeonWang&#39;s Blog">
+    <meta name="keywords" content="浏览器渲染原理, LeonWang&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>今天有点小废柴 | LeonWang&#39;s Blog</title>
+    <title>浏览器渲染原理 | LeonWang&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">今天有点小废柴</h1>
+                    <h1 class="description center-align post-title">浏览器渲染原理</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                                <span class="chip bg-color">前端知识</span>
+                            </a>
+                        
+                            <a href="/tags/HTML/">
+                                <span class="chip bg-color">HTML</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                web前端
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -443,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-04-06
+                    2021-05-25
                 </div>
                 
 
@@ -464,18 +481,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="以后小王会是怎样的呢"><a href="#以后小王会是怎样的呢" class="headerlink" title="以后小王会是怎样的呢"></a>以后小王会是怎样的呢</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>今日事：</p>
+                <h3 id="1-基本的浏览器渲染及网络传输过程"><a href="#1-基本的浏览器渲染及网络传输过程" class="headerlink" title="1.基本的浏览器渲染及网络传输过程"></a>1.基本的浏览器渲染及网络传输过程</h3><hr>
+<p><font color=red>大多数设备的刷新频率是60Hz，也就说是浏览器对每一帧画面的渲染工作要在16ms内完成,超出这个时间，页面的渲染就会出现卡顿现象，影响用户体验</font></p>
+<hr>
+<p>:smile:</p>
 <ul>
-<li>老师给了新任务，研究区块链，Run代码</li>
-<li>闲的没事，学室内设计去了（我有罪，不该不务正业呜呜┭┮﹏┭┮</li>
-<li>今天想把博客内容丰富一下的，但是和发小视频了一个半小时，没时间了，明天再做吧</li>
+<li></li>
 </ul>
-<p>明日计划：</p>
+<h2 id="浏览器主要组成与浏览器线程"><a href="#浏览器主要组成与浏览器线程" class="headerlink" title="浏览器主要组成与浏览器线程"></a><strong>浏览器主要组成与浏览器线程</strong></h2><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/XP4dRIhZqqV6B9SNRbyQflzvDFfqbdft4GOowoInSJ5DAIfDjYxO0nS2wiaCLeCZGJ1icXGZl1UVK0iazyTPsrrEQ/640?wx_fmt=png" alt="640?wx_fmt=png"></p>
+<h3 id="浏览器组件"><a href="#浏览器组件" class="headerlink" title="浏览器组件"></a><strong>浏览器组件</strong></h3><p>浏览器大体上由以下几个组件组成，各个浏览器可能有一点不同。</p>
 <ul>
-<li>上午将区块链背景知识填充完毕</li>
-<li>下午找相关源码RUN </li>
-<li>开始英语6级的准备呜呜呜我好菜，现在还没过</li>
+<li>界面控件 – 包括地址栏，前进后退，书签菜单等窗口上除了网页显示区域以外的部分</li>
+<li>浏览器引擎 – 查询与操作渲染引擎的接口</li>
+<li>渲染引擎 – 负责显示请求的内容。比如请求到HTML, 它会负责解析HTML、CSS并将结果显示到窗口中</li>
+<li>网络 – 用于网络请求, 如HTTP请求。它包括平台无关的接口和各平台独立的实现</li>
+<li>UI后端 – 绘制基础元件，如组合框与窗口。它提供平台无关的接口，内部使用操作系统的相应实现</li>
+<li>JS解释器 - 用于解析执行JavaScript代码</li>
+<li>数据存储持久层 - 浏览器需要把所有数据存到硬盘上，如cookies。新的HTML5规范规定了一个完整（虽然轻量级）的浏览器中的数据库 web database</li>
 </ul>
+<h2 id="渲染过程"><a href="#渲染过程" class="headerlink" title="渲染过程"></a><strong>渲染过程</strong></h2><p><img src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/XP4dRIhZqqV6B9SNRbyQflzvDFfqbdftQpnTDP7u7ic6kxy3kJCsQH0lZvUOhvjyvIXpRjhicywaYMIhCk0DyZCg/640?wx_fmt=png" alt="640?wx_fmt=png"></p>
+<p>渲染流程有四个主要步骤：</p>
+<ol>
+<li>解析HTML生成DOM树 - 渲染引擎首先解析HTML文档，生成DOM树</li>
+<li>构建Render树 - 接下来不管是内联式，外联式还是嵌入式引入的CSS样式会被解析生成CSSOM树，根据DOM树与CSSOM树生成另外一棵用于渲染的树-渲染树(Render tree)，</li>
+<li>布局Render树 - 然后对渲染树的每个节点进行布局处理，确定其在屏幕上的显示位置</li>
+<li>绘制Render树 - 最后遍历渲染树并用UI后端层将每一个节点绘制出来</li>
+</ol>
 
                 
             </div>
@@ -502,7 +533,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://codewxll.github.io/2021/04/06/%E4%BB%8A%E5%A4%A9%E6%9C%89%E7%82%B9%E5%B0%8F%E5%BA%9F%E6%9F%B4/">https://codewxll.github.io/2021/04/06/%E4%BB%8A%E5%A4%A9%E6%9C%89%E7%82%B9%E5%B0%8F%E5%BA%9F%E6%9F%B4/</a>
+                    <a href="https://codewxll.github.io/2021/05/25/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/">https://codewxll.github.io/2021/05/25/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,7 +570,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                                    <span class="chip bg-color">前端知识</span>
+                                </a>
+                            
+                                <a href="/tags/HTML/">
+                                    <span class="chip bg-color">HTML</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -731,17 +770,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/04/18/Android-%E5%85%A5%E9%97%A8/">
+                <a href="/2021/05/25/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Android 入门">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="浏览器渲染原理">
                         
-                        <span class="card-title">Android 入门</span>
+                        <span class="card-title">浏览器渲染原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -751,26 +791,31 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%89%E5%8D%93/" class="post-category">
-                                    安卓
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">前端知识</span>
+                    </a>
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
                 </div>
@@ -784,13 +829,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/05/The-birth-of-my-blog/">
+                <a href="/2021/05/22/flex%E5%B8%83%E5%B1%80%E4%B9%8Bjustify-content/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="The birth of my blog">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="flex布局之justify-content">
                         
-                        <span class="card-title">The birth of my blog</span>
+                        <span class="card-title">flex布局之justify-content</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,14 +846,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A5%E5%B8%B8%E7%89%A2%E9%AA%9A/" class="post-category">
-                                    日常牢骚
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
                                 </a>
                             
                             
@@ -818,8 +863,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%9E%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
-                        <span class="chip bg-color">非技术的碎碎念</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">前端知识</span>
+                    </a>
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
                     </a>
                     
                 </div>
